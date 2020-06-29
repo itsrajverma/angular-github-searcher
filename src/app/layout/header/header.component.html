@@ -23,7 +23,7 @@
           class="nav-item nav-link">Sign Up</a>
 
 
-        <a *ngIf="email" class="nav-item nav-link" >Log Out</a>
+        <a *ngIf="email" (click)="handleSignOut()" class="nav-item nav-link" >Log Out</a>
 
       </div>
   </div>

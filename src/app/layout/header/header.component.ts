@@ -26,4 +26,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  handleSignOut(){
+    const res = this.auth.signOut();
+    this.router.navigateByUrl("signin");
+    this.toastr.info("Login again to Continue");
+    this.email = null;
+  }
+
 }
