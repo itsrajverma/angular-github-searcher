@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnChanges,Input } from '@angular/core';
+
+import { GithubService } from "../../services/github.service";
 
 @Component({
   selector: 'app-repos',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReposComponent implements OnInit {
 
-  constructor() { }
+  @Input() repoUrl : string;
+
+  repos = [];
+
+  constructor(
+    private githubService : GithubService
+  ) { }
 
   ngOnInit(): void {
   }
+
+  ngOnChanges(){
+    if(this.repoUrl){
+      this.githubService.getRepos(this.repoUrl).subscribe(
+        (repos: [] )=>{
+          this.repos = repos;
+        },(error => {
+          console.log(error);
+        })
+      )
+    }
+  }
+
+
 
 }
