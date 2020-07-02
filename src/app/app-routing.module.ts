@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.com
 
 import { AngularFireAuthGuard,redirectUnauthorizedTo,redirectLoggedInTo } from "@angular/fire/auth-guard";
 
+
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['signin']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['']);
 
