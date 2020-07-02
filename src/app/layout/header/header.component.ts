@@ -26,6 +26,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Sigout Error fixed
   async  handleSignOut(){
     try {
       await this.auth.signOut();
