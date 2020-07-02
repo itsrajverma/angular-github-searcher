@@ -13,7 +13,7 @@ const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['signin']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['']);
 
 
-
+// Routes
 const routes: Routes = [
   {
     path:"",
