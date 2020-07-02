@@ -29,6 +29,7 @@ export class HeaderComponent implements OnInit {
   // Sigout Error fixed
   async  handleSignOut(){
     try {
+      // use await
       await this.auth.signOut();
       this.router.navigateByUrl("signin");
       this.toastr.info("Login again to Continue");
